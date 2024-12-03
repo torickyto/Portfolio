@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background: #f0f6f0;
+  color: #222323;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.dark-mode {
+  background: #222323;
+  color: #f0f6f0;
+}
+
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+}
+
+.cursor-dot {
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  transform: translate(-50%, -50%);
+}
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .typewriter {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 20;
+    pointer-events: none;
+  }
+  
+  .cursor {
+    display: inline-block;
+    margin-left: 1px;
+    transform: translateY(4px);
+  }
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button, a, .project-button, .logo {
+
+}
+
+.main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+.matrix-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .dot-matrix {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    background: transparent;
+    font-family: monospace;
+    line-height: 1;
+    white-space: pre;
+    z-index: 5;
+  }
+  
+  @media (max-width: 768px) {
+    .matrix-container {
+      top: 60%;
+    }
+  }
